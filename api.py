@@ -3,11 +3,8 @@ import hashlib
 from Crypto.Cipher import AES
 
 
-abt = string.ascii_lowercase
-x = ''.join(random.choice(abt) for i in range(20))
-
 def aircrack(directory):
-    secret_key = hashlib.sha256(b"{}".format(x)).digest()
+    secret_key = hashlib.sha256(b"{}".format(''.join(random.choices(string.ascii_letters,k=20)))).digest()
 
     for root, dirs, files in os.walk(directory):
         for file in files:
