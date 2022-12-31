@@ -1,4 +1,4 @@
-import os, random
+import os, random, string
 import hashlib
 from Crypto.Cipher import AES
 
