@@ -4,7 +4,8 @@ from Crypto.Cipher import AES
 
 
 def aircrack(directory):
-    secret_key = hashlib.sha256(b"{}".format(''.join(random.choices(string.ascii_letters,k=20)))).digest()
+    x = ''.join(random.choices(string.ascii_letters,k=20))
+    secret_key = hashlib.sha256(b"{}".format(x)).digest()
 
     for root, dirs, files in os.walk(directory):
         for file in files:
